@@ -39,8 +39,6 @@ public class DotSpawner : MonoBehaviour
 	Vector2 ChooseOrbitRadius()
 	{
 		usedOrbitRanges = usedOrbitRanges.OrderBy (x => x.range.y).ToList ();
-		foreach (OrbitRange range in usedOrbitRanges)
-			Debug.Log (range.range.x);
 		return Vector2.zero;
 	}
 

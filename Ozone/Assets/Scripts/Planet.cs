@@ -23,15 +23,15 @@ public class Planet : MonoBehaviour
 
 	void Update()
 	{
-		LookAtMouse ();
+		//LookAtMouse ();
 	}
 
 	void OnCollisionStay2D(Collision2D other)
 	{
-		if (other.gameObject.Equals (ball.gameObject)) 
+		//if (other.gameObject.Equals (ball.gameObject)) 
 		{
-			SetGameTimeModifier ();
-			BounceBall ();
+			//SetGameTimeModifier ();
+			//BounceBall ();
 		}
 	}
 		
@@ -47,6 +47,8 @@ public class Planet : MonoBehaviour
 		if (ball.GetComponent<Rigidbody2D> () != null) 
 		{
 			ball.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, GetBounceForce ()), ForceMode2D.Impulse);
+			ball.GetComponent<Ball>().velocity = new Vector2(0, GetBounceForce());
+			//ball.GetComponent<Ball>().Bounce(GetBounceForce());
 		}
 	}
 
